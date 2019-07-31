@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单</title>
+    <link type="text/css" rel="styleSheet" href="../css/index.css"/>
+    <script src="../js/jquery-1.8.3.js"></script>
+    <script src="../js/index.js"></script>
+</head>
+<body>
+<div class="userWrap">
+    <!--头部-->
+    <div id="tophead" style="height: 60px;">
+        <div style="float:left;height: 60px;width:170px">
+            <img id="logo" src="../image/erp2.png">
+        </div>
+        <div style="background-color:lightblue;height: 60px">
+            <p id="layout"><input type="button" value="退出" style="background-color:darkgray;color:darkslategray;font-size:15px;"></p>
+        </div>
+    </div>
+    <!--头部-->
+
+    <div id="midbody">
+        <!--菜单开始-->
+        <div class="userMenu">
+            <ul>
+                <li data-id="xtsy" class="current"><img src="../image/icon/1-1.png"/>系统首页</li>
+                <li data-id="cgdd"><img src="../image/icon/2.png"/>采购订单</li>
+                <li data-id="cggl"><img src="../image/icon/3.png"/>采购管理</li>
+                <li data-id="cgzq"><img src="../image/icon/4.png"/>采购账期</li>
+                <li data-id="xsdd"><img src="../image/icon/5.png"/>销售订单</li>
+                <li data-id="xsbb"><img src="../image/icon/6.png"/>销售管理</li>
+                <li data-id="xszq"><img src="../image/icon/7.png"/>销售账期</li>
+                <li data-id="wlgl"><img src="../image/icon/8.png"/>物料管理</li>
+                <li data-id="kwgl"><img src="../image/icon/9.png"/>库位管理</li>
+                <li data-id="jldw"><img src="../image/icon/10.png"/>计量单位</li>
+                <li data-id="khgl"><img src="../image/icon/11.png"/>客户管理</li>
+                <li data-id="gysgl"><img src="../image/icon/12.png"/>供应商管理</li>
+            </ul>
+        </div>
+        <!--菜单结束-->
+        <!--表单开始-->
+        <div id="content"></div>
+    </div>
+
+
+</div>
+
+
+</body>
+<script>
+    $(function () {
+        //加载首页菜单
+        loadInner();
+
+        //菜单单机事件
+        $(".userMenu").on("click", "li", function () {
+            var sId = $(this).data("id"); //获取data-id的值
+            window.location.hash = sId; //设置锚点
+            $(this).addClass("changeColor").siblings().removeClass("changeColor");
+            loadInner();
+        });
+
+
+    });
+</script>
+
+</html>

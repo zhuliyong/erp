@@ -1,0 +1,35 @@
+server:
+  port: 8080
+#debug: true
+spring:
+  application:
+    name: erpsys
+#  tomcat:
+#  uri-encoding: UTF-8
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    jdbc-url: jdbc:mysql://192.168.2.227:3306/paysys?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: admin
+    password: lJAT6u9HH8QWAMGDjA
+    initialSize: 1  #初始化大小
+    minIdle: 1  #空闲连接池的大小
+    maxActive: 50 #最大激活数量
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
+
+#MyBatis配置文件
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mappers/*.xml
+#日志打印SQL
+logging:
+  level:
+    com.vicmob: debug  #日志级别
+  config: classpath:logback-spring.xml  #加载指定日志文件
+swagger:
+  enable: true #是否开启swagger
+
+
+
+
+

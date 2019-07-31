@@ -1,0 +1,76 @@
+/*样式初始化*/
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,img
+{border:medium none;margin:0;padding:0;list-style-type:none}
+body
+{font:15px/2.5 '微软雅黑',tahoma,Srial,helvetica,sans-serif}
+
+/*退出*/
+#layout{
+    text-align: right;
+    height:60px;
+    line-height: 60px;
+    font-size: 20px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+#layout input{
+    width:80px;
+}
+
+/*菜单栏*/
+.userMenu {
+    float: left;
+    width: 170px;
+    height: 700px;
+    color: #fff;
+    background-color:grey;
+    padding-top: 20px;
+}
+#logo{
+    height: 60px;
+    width: 170px;
+    line-height:60px;
+    vertical-align:middle;
+}
+
+#midbody ul{
+    font-size: 20px;
+    list-style-type: none;
+    margin:0px;
+    padding:0px;
+}
+
+#midbody ul li{
+    cursor: pointer;
+    font-size: 15px;
+    padding:0;
+    height: 50px;
+    display: list-item;
+    line-height:50px;/*line-height 和 height一样就会垂直居中*/
+    /*text-align: center;*/
+    /*text-decoration: none;*/
+    margin-left:10px;
+}
+#midbody ul img{
+    height: 25px;
+    width: 25px;
+    line-height:50px;
+    margin-right: 6px;
+    vertical-align:middle;
+
+}
+
+
+/*菜单选择时样式改变*/
+.changeColor{
+    background-color:lightslategray;
+}
+
+
+/*右侧表单*/
+#content {
+    height: 650px;
+    margin-left: 170px;
+}
+
+

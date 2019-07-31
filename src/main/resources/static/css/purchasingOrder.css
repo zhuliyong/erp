@@ -1,0 +1,57 @@
+
+/*表头样式开始*/
+.title{
+    height:30px;
+}
+.cgdd-header{
+    padding-top:20px;
+    height:30px;
+}
+.cgdd-title{
+    height:30px;
+    margin-right:40px;
+    float:left;
+
+}
+.cgdd-title input{
+    height:25px;
+    line-height:25px;
+    background-color:lightcyan;
+    /*font-size: 15px;*/
+}
+.cgdd-title-search{
+    height:30px;
+    margin-right:40px;
+    float:right;
+}
+.cgdd-title-search input{
+    height:30px;
+    line-height: 30px;
+    /*font-size: 15px;*/
+    color: white;
+    background-color:cornflowerblue;
+}
+/*表头样式结束*/
+
+/*表体样式开始*/
+.cgdd-body{
+    margin-top: 50px;
+    margin-left:10px;
+    margin-right:10px;
+    height:500px;
+    background-color:whitesmoke;
+}
+table{
+    border-collapse:separate;
+    table-layout: fixed;
+    color:#606266;
+    /*border-bottom:1px solid #ebeef5;*/
+    /*padding-left:10px;*/
+}
+table th ,td{
+    text-align:center;
+}
+.t-button{
+    cursor: pointer;
+}
+/*表体样式结束*/
