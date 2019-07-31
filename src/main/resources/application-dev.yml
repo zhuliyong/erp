@@ -8,7 +8,7 @@ spring:
 #  uri-encoding: UTF-8
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    jdbc-url: jdbc:mysql://192.168.2.227:3306/paysys?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    jdbc-url: jdbc:mysql://192.168.2.227:3306/erp?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: admin
     password: lJAT6u9HH8QWAMGDjA
     initialSize: 1  #初始化大小
