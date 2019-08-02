@@ -1,0 +1,60 @@
+
+/*表头样式开始*/
+.title{
+    height:30px;
+}
+.cgdd-header{
+    padding-top:20px;
+    height:30px;
+}
+.cgdd-title-search{
+    height:30px;
+    margin-right:40px;
+    float:right;
+}
+.cgdd-title-search input{
+    height:30px;
+    line-height: 30px;
+    /*font-size: 15px;*/
+    color: white;
+    background-color:cornflowerblue;
+    border:1px solid #dcdfe6;
+}
+/*表头样式结束*/
+
+/*表体样式开始*/
+.cgdd-body{
+    margin-top: 50px;
+    margin-left:10px;
+    margin-right:10px;
+    height:500px;
+    background-color:whitesmoke;
+}
+table{
+    border-collapse:separate;
+    table-layout: fixed;
+}
+td{
+    text-align:center;
+    border-color:#606266;
+    color:#3f6db5;
+}
+th{
+    color:#3f6db5;
+    text-align:center;
+}
+
+.tb-b-edit, .tb-b-del{
+    background-color:sandybrown;
+    color: white;
+}
+.tb-b-edit, .tb-b-del{
+    background-color:sandybrown;
+    color: white;
+}
+/*表体样式结束*/
+
+
+/*新增弹框*/
+
+/*新增弹框*/

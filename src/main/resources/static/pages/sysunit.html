@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="styleSheet" href="../css/sysunit.css"/>
+    <script>
+        $(function(){
+           $(".cgdd-title-search input").on("click",function(){
+               $("#newUnit").show();
+               $("#backfloat").show();
+           })
+
+
+
+
+        })
+    </script>
+</head>
+<body>
+<!--表头开始-->
+    <div class="title" style="font-size:22px;margin-left:5px;">
+        <p><B>计量单位</B></p>
+    </div>
+    <div class="cgdd-header">
+        <div class="cgdd-title-search">
+            <input type="button" value="添加"   style=" width:80px;" >
+        </div>
+    </div>
+<!--表头结束-->
+
+<!--表体开始-->
+    <div class="cgdd-body">
+        <table style="width:100%;" border="1" cellspacing="0" cellspacing="0">
+            <tr>
+                <th style="width:20%;">单位编号</th>
+                <th style="width:40%;">单位名称</th>
+                <th style="width:10%;">操作</th>
+            </tr>
+            <tr>
+                <td>kg</td>
+                <td>千克</td>
+                <td><input class="tb-b-edit" type="button" value="编辑">&nbsp;&nbsp;<input class="tb-b-del" type="button" value="删除"></td>
+            </tr>
+        </table>
+    </div>
+
+<!--弹出窗样式-->
+    <!--修改背景-->
+    <div id="backfloat" style="display: none; background: #000; opacity: 0.5;width: 100%;height: 100%;position: absolute;top: 0;left: 0;z-index: 1000;"></div>
+    <!--添加单位-->
+    <div id="newUnit" style="display: none; border: 1px;height:200px;width:350px; position: absolute; top: 30%; left: 50%; margin: -100px 0 0 -125px;z-index: 1001;background-color:white">
+        <div style="height: 35px;border-bottom: 1px solid #ddd">
+            <span style="margin-left:30px;">添加：</span><input style="position:absolute;right:20px;top:10px;border:0px;background:0 0;cursor:pointer;;" type="button" value="X">
+        </div>
+        <div style="height: 50px;margin-top:10px">
+            <div style="float:left;margin-left:10px;text-align: right;width:100px"><span style="color:red;">* </span>单位编码：</div>
+            <div style="width:100% ;margin-left:120px"> <input type="text" style="width:200px;"></div>
+        </div>
+        <div style="height: 50px;">
+            <div style="float:left;margin-left:10px;text-align: right;width:100px"><span style="color:red;">* </span>单位名称：</div>
+            <div style="width:100% ;margin-left:120px"> <input type="text" style="width:200px;"></div>
+        </div>
+        <div style="text-align:right;">
+            <input type="button" style="width:60px;height:29px;margin-right:20px;color:#fff;background-color:#3a8ee6;border:1px solid #dcdfe6" value="保存" >
+        </div>
+    </div>
+<!--表体结束-->
+
+    <div class="cgdd-page"></div>
+</body>
+</html>

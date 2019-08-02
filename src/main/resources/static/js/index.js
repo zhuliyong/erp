@@ -10,6 +10,10 @@ function loadInner() {
             pathn = "purchasingOrderManager.html";
             i = 1;
             break;
+        case "#jldw":
+            pathn = "sysunit.html";
+            i = 2;
+            break;
         default:
             pathn = "home.html";
             i = 0;
