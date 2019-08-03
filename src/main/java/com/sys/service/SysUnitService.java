@@ -13,4 +13,6 @@ public interface SysUnitService {
     ResultResponse addUnit(SysUnit pd);
 
     ResultResponse deleteUnit(Integer unitId);
+
+    ResultResponse listPage(Integer pageNo,Integer pageSize);
 }

@@ -1,14 +1,21 @@
 package com.sys.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.sys.common.response.ResultResponse;
 import com.sys.common.response.ResultServer;
+import com.sys.domain.PageData;
 import com.sys.domain.SysUnit;
 import com.sys.mapper.SysUnitMapper;
 import com.sys.service.SysUnitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.support.rowset.ResultSetWrappingSqlRowSet;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * @author peter
@@ -45,5 +52,16 @@ public class SysUnitServiceImpl implements SysUnitService {
         }
         log.error("==添加计量单位失败");
         return ResultServer.error("删除失败");
+    }
+
+    @Override
+    public ResultResponse listPage(Integer pageNo,Integer pageSize) {
+        Page page = PageHelper.startPage(pageNo, pageSize);
+        List<PageData> listPage = unitDao.findList();
+        PageInfo<PageData> pageinfo = new PageInfo<>(listPage);
+        if (pageinfo.getList().size() > 0) {
+            return ResultServer.succes(pageinfo);
+        }
+        return ResultServer.error("无数据");
     }
 }

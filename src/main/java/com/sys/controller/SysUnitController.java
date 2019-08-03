@@ -51,4 +51,15 @@ public class SysUnitController {
         return unitService.deleteUnit(unitId);
     }
 
+
+    @ApiOperation(value = "计量单位分页查询")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNo",value = "当前页码",required = true),
+            @ApiImplicitParam(name = "pageSize",value = "每页行数",required = true)
+    })
+    @PostMapping("unit/page")
+    public ResultResponse listPage(Integer pageNo,Integer pageSize){
+        return unitService.listPage(pageNo,pageSize);
+    }
+
 }

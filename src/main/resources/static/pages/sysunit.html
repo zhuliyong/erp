@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link type="text/css" rel="styleSheet" href="../css/sysunit.css"/>
+    <link rel="stylesheet" type="text/css" href="../fenye/jquery.sPage.css">
+    <script src="../fenye/jquery.sPage.js"></script>
+    <script src="../js/unit.js"></script>
     <script>
         $(function(){
-           $(".cgdd-title-search input").on("click",function(){
-               $("#newUnit").show();
-               $("#backfloat").show();
-           })
 
+            pageList(1,10);
+
+            /*添加*/
+           $(".cgdd-title-search input").on("click",showPop);
+
+            /*关闭添加*/
+            $("#newUnit-del").on("click",closePop);
+
+            /*保存*/
+            $("#newUnit-save").on("click",addUnit);
 
 
 
@@ -44,25 +53,32 @@
             </tr>
         </table>
     </div>
+<!--表体结束-->
+<!--分页开始-->
+    <div class="cgdd-page" style="margin-left:10px; align-items: center"  id="myPage"></div>
+<script>
+
+</script>
+<!--分页结束-->
 
 <!--弹出窗样式-->
     <!--修改背景-->
     <div id="backfloat" style="display: none; background: #000; opacity: 0.5;width: 100%;height: 100%;position: absolute;top: 0;left: 0;z-index: 1000;"></div>
     <!--添加单位-->
     <div id="newUnit" style="display: none; border: 1px;height:200px;width:350px; position: absolute; top: 30%; left: 50%; margin: -100px 0 0 -125px;z-index: 1001;background-color:white">
-        <div style="height: 35px;border-bottom: 1px solid #ddd">
-            <span style="margin-left:30px;">添加：</span><input style="position:absolute;right:20px;top:10px;border:0px;background:0 0;cursor:pointer;;" type="button" value="X">
+        <div style="height: 35px;border-bottom: 1px solid #ddd" >
+            <span style="margin-left:30px;">添加：</span><input id="newUnit-del" style="position:absolute;right:20px;top:10px;border:0px;background:0 0;cursor:pointer;" type="button" value="X">
         </div>
         <div style="height: 50px;margin-top:10px">
             <div style="float:left;margin-left:10px;text-align: right;width:100px"><span style="color:red;">* </span>单位编码：</div>
-            <div style="width:100% ;margin-left:120px"> <input type="text" style="width:200px;"></div>
+            <div style="width:100% ;margin-left:120px"> <input id="newUnit-code" type="text" style="width:200px;"></div>
         </div>
         <div style="height: 50px;">
             <div style="float:left;margin-left:10px;text-align: right;width:100px"><span style="color:red;">* </span>单位名称：</div>
-            <div style="width:100% ;margin-left:120px"> <input type="text" style="width:200px;"></div>
+            <div style="width:100% ;margin-left:120px"> <input  id="newUnit-name" type="text" style="width:200px;"></div>
         </div>
         <div style="text-align:right;">
-            <input type="button" style="width:60px;height:29px;margin-right:20px;color:#fff;background-color:#3a8ee6;border:1px solid #dcdfe6" value="保存" >
+            <input id="newUnit-save" type="button" style="width:60px;height:29px;margin-right:20px;color:#fff;background-color:#3a8ee6;border:1px solid #dcdfe6" value="保存" >
         </div>
     </div>
 <!--表体结束-->

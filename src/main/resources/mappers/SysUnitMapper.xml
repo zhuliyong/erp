@@ -70,4 +70,13 @@
       unit_name = #{unitName,jdbcType=VARCHAR}
     where unit_id = #{unitId,jdbcType=INTEGER}
   </update>
+
+  <select id="findList" resultType="com.sys.domain.PageData">
+    select
+    unit_id as unitId,
+    unit_code as  unitCode,
+    unit_name as unitName
+    from sys_unit
+
+  </select>
 </mapper>
