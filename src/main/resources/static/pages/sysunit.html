@@ -27,6 +27,9 @@
     </script>
 </head>
 <body>
+
+<input id="pageNo"  type="hidden" >
+<input id="total"  type="hidden">
 <!--表头开始-->
     <div class="title" style="font-size:22px;margin-left:5px;">
         <p><B>计量单位</B></p>
@@ -40,25 +43,23 @@
 
 <!--表体开始-->
     <div class="cgdd-body">
-        <table style="width:100%;" border="1" cellspacing="0" cellspacing="0">
+        <table id="unit-table" style="width:100%;" border="1" cellspacing="0" cellspacing="0">
             <tr>
                 <th style="width:20%;">单位编号</th>
                 <th style="width:40%;">单位名称</th>
                 <th style="width:10%;">操作</th>
             </tr>
-            <tr>
-                <td>kg</td>
-                <td>千克</td>
-                <td><input class="tb-b-edit" type="button" value="编辑">&nbsp;&nbsp;<input class="tb-b-del" type="button" value="删除"></td>
-            </tr>
+                <!--<tr>-->
+                    <!--<td>kg</td>-->
+                    <!--<td>千克</td>-->
+                    <!--<td><input class="tb-b-edit" type="button" value="编辑">&nbsp;&nbsp;<input class="tb-b-del" type="button" value="删除"></td>-->
+                <!--</tr>-->
+
         </table>
     </div>
 <!--表体结束-->
 <!--分页开始-->
     <div class="cgdd-page" style="margin-left:10px; align-items: center"  id="myPage"></div>
-<script>
-
-</script>
 <!--分页结束-->
 
 <!--弹出窗样式-->
