@@ -108,7 +108,6 @@ function findPage(pageNo,pageSize){
                 //获取数据并向表体添加
                 var datalength = res.data.list.length;
                 var unitTable = $("#unit-table");
-
                 for(var i=0;i<datalength;i++){
                     var unitName = res.data.list[i].unitName;
                     var unitCode = res.data.list[i].unitCode;
