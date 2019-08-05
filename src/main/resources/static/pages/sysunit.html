@@ -21,6 +21,8 @@
             /*保存*/
             $("#newUnit-save").on("click",addUnit);
 
+            /*删除*/
+            $("#unit-tbody").on("click",'.tb-b-del',delUnit);
 
 
         })
@@ -44,16 +46,20 @@
 <!--表体开始-->
     <div class="cgdd-body">
         <table id="unit-table" style="width:100%;" border="1" cellspacing="0" cellspacing="0">
+            <thead>
             <tr>
                 <th style="width:20%;">单位编号</th>
                 <th style="width:40%;">单位名称</th>
                 <th style="width:10%;">操作</th>
             </tr>
-                <!--<tr>-->
-                    <!--<td>kg</td>-->
-                    <!--<td>千克</td>-->
-                    <!--<td><input class="tb-b-edit" type="button" value="编辑">&nbsp;&nbsp;<input class="tb-b-del" type="button" value="删除"></td>-->
-                <!--</tr>-->
+            </thead>
+            <tbody id="unit-tbody">
+            <!--<tr>-->
+            <!--<td>kg</td>-->
+            <!--<td>千克</td>-->
+            <!--<td><input class="tb-b-edit" type="button" value="编辑">&nbsp;&nbsp;<input class="tb-b-del" type="button" value="删除"></td>-->
+            <!--</tr>-->
+            </tbody>
 
         </table>
     </div>

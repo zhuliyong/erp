@@ -28,7 +28,7 @@
     margin-left:10px;
     margin-right:10px;
     height:500px;
-    background-color:whitesmoke;
+    background-color:#fff;
 }
 table{
     border-collapse:separate;
@@ -40,7 +40,6 @@ td{
     color:#3f6db5;
 }
 th{
-    color:#3f6db5;
     text-align:center;
 }
 

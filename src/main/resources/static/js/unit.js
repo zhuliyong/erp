@@ -23,7 +23,7 @@ function addUnit (){
                 if(res.status == 1){
                     $("#newUnit").hide();
                     $("#backfloat").hide();
-                    alert("添加成功!");
+                    window.location.reload();
                 }
             },
             error: function () {
@@ -36,6 +36,31 @@ function addUnit (){
     }
 }
 
+/*删除行元素*/
+
+function delUnit(){
+
+    var unitId = $(this).parents("tr").children("td").eq(0).html();
+    alert(unitId);
+    // $.ajax({
+    //     url: path+"/unit/del",
+    //     data: {
+    //         "unitId":unitId
+    //     },
+    //     type: "post",
+    //     dataType: "json",
+    //     success: function (res) {
+    //         if(res.status == 1){
+    //             window.location.reload();
+    //         }else{
+    //             alert("删除失败")
+    //         }
+    //     },
+    //     error: function () {
+    //         console.log("删除失败")
+    //     }
+    // })
+}
 
 /*打开弹窗*/
 function showPop(){
@@ -73,16 +98,18 @@ function pageList(pageNo,pageSize){
 
                 //获取数据并向表体添加
                 var datalength = res.data.list.length;
-                var unitTable=$("#unit-table");
+                var unitTable=$("#unit-tbody");
                 for(var i=0;i<datalength;i++){
                     var unitName = res.data.list[i].unitName;
                     var unitCode = res.data.list[i].unitCode;
                     var unitId = res.data.list[i].unitId;
                     //向表体添加行
-                    unitTable.append( "<tr><td class='unit-id' style='display: none'>" +unitId
-                         + "</td><td>"+unitCode+"</td><td>"+unitName+"</td>"
-                         +'<td><input class="tb-b-edit" type="button" value="编辑">&nbsp;&nbsp;' +
-                          '<input class="tb-b-del" type="button" value="删除"></td>');
+                    var str = ""+ "<tr><td class='unit-id' style='display: none'>" +unitId
+                        + "</td><td>"+unitCode+"</td><td>"+unitName+"</td>"
+                        +'<td><input class="tb-b-edit" type="button" value="编辑">&nbsp;&nbsp;' +
+                        '<input class="tb-b-del" type="button" value="删除"></td>';
+                    var $tr = $(str);
+                    unitTable.append($tr);
                 }
 
             }
@@ -91,6 +118,31 @@ function pageList(pageNo,pageSize){
             console.log("添加单位发生异常")
         }
     })
+}
+
+
+/*加载分页*/
+//pageNo 当前页码
+//num 数据总条数
+function page(pageNo,total){
+    $("#myPage").sPage({
+        page:pageNo,//当前页码，必填
+        total:total,//数据总条数，必填
+        pageSize:10,//每页显示多少条数据，默认10条
+        totalTxt:"共{total}条",//数据总条数文字描述，{total}为占位符，默认"共{total}条"
+        showTotal:true,//是否显示总条数，默认关闭：false
+        showSkip:true,//是否显示跳页，默认关闭：false
+        showPN:true,//是否显示上下翻页，默认开启：true
+        prevPage:"上一页",//上翻页文字描述，默认“上一页”
+        nextPage:"下一页",//下翻页文字描述，默认“下一页”
+        backFun:function(page){
+            //点击分页按钮回调函数，返回当前页码
+             //清空记录
+             $("#unit-tbody").html("");
+             //加载数据，调用 分页单击事件
+             findPage(page,10)
+        }
+    });
 }
 
 //分页单击事件
@@ -125,26 +177,4 @@ function findPage(pageNo,pageSize){
             console.log("添加单位发生异常")
         }
     })
-}
-
-
-/*加载分页*/
-//pageNo 当前页码
-//num 数据总条数
-function page(pageNo,total){
-    $("#myPage").sPage({
-        page:pageNo,//当前页码，必填
-        total:total,//数据总条数，必填
-        pageSize:10,//每页显示多少条数据，默认10条
-        totalTxt:"共{total}条",//数据总条数文字描述，{total}为占位符，默认"共{total}条"
-        showTotal:true,//是否显示总条数，默认关闭：false
-        showSkip:true,//是否显示跳页，默认关闭：false
-        showPN:true,//是否显示上下翻页，默认开启：true
-        prevPage:"上一页",//上翻页文字描述，默认“上一页”
-        nextPage:"下一页",//下翻页文字描述，默认“下一页”
-        backFun:function(page){
-            //点击分页按钮回调函数，返回当前页码
-             findPage(page,10)
-        }
-    });
 }
