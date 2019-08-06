@@ -10,9 +10,32 @@ import com.sys.domain.SysUnit;
  */
 public interface SysUnitService {
 
+    /**
+     * 添加
+     * @param pd
+     * @return
+     */
     ResultResponse addUnit(SysUnit pd);
 
+    /**
+     * 编辑
+     * @param pd
+     * @return
+     */
+    ResultResponse editUnit(SysUnit pd);
+
+    /**
+     * 删除
+     * @param unitId
+     * @return
+     */
     ResultResponse deleteUnit(Integer unitId);
 
+    /**
+     * 分页查询
+     * @param pageNo
+     * @param pageSize
+     * @return
+     */
     ResultResponse listPage(Integer pageNo,Integer pageSize);
 }

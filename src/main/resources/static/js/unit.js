@@ -2,6 +2,7 @@
 function addUnit (){
     var code = $("#newUnit-code").val().trim();
     var name = $("#newUnit-name").val().trim();
+    var id = $("#curr_unitId").val();
     var flag = 1;
     if(code == null || code ==""){
         flag = 0;
@@ -15,7 +16,8 @@ function addUnit (){
             url: path+"/unit/new",
             data: {
                 "unitCode": code,
-                "unitName": name
+                "unitName": name,
+                "unitId": id
             },
             type: "post",
             dataType: "json",
@@ -37,30 +39,41 @@ function addUnit (){
 }
 
 /*删除行元素*/
-
 function delUnit(){
-
     var unitId = $(this).parents("tr").children("td").eq(0).html();
-    alert(unitId);
-    // $.ajax({
-    //     url: path+"/unit/del",
-    //     data: {
-    //         "unitId":unitId
-    //     },
-    //     type: "post",
-    //     dataType: "json",
-    //     success: function (res) {
-    //         if(res.status == 1){
-    //             window.location.reload();
-    //         }else{
-    //             alert("删除失败")
-    //         }
-    //     },
-    //     error: function () {
-    //         console.log("删除失败")
-    //     }
-    // })
+    $.ajax({
+        url: path+"/unit/del",
+        data: {
+            "unitId":unitId
+        },
+        type: "post",
+        dataType: "json",
+        success: function (res) {
+            if(res.status == 1){
+                window.location.reload();
+            }else{
+                alert("删除失败")
+            }
+        },
+        error: function () {
+            console.log("删除失败")
+        }
+    })
 }
+
+/*编辑*/
+function editUtil(){
+    var unitId = $(this).parents("tr").children("td").eq(0).html();
+    var unitCode = $(this).parents("tr").children("td").eq(1).html();
+    var unitName = $(this).parents("tr").children("td").eq(2).html();
+    $("#newUnit-code").val(unitCode);
+    $("#newUnit-name").val(unitName);
+    $("#curr_unitId").val(unitId);
+    $("#newUnit").show();
+    $("#backfloat").show();
+
+}
+
 
 /*打开弹窗*/
 function showPop(){

@@ -42,6 +42,17 @@ public class SysUnitServiceImpl implements SysUnitService {
         return ResultServer.error("添加失败");
     }
 
+    @Override
+    @Transactional
+    public ResultResponse editUnit(SysUnit pd) {
+        Integer res =unitDao.updateByPrimaryKey(pd);
+        if(res!=null && res.intValue()==1){
+            return ResultServer.succes("编辑成功");
+        }
+        log.error("==编辑计量单位失败");
+        return ResultServer.error("编辑失败");
+    }
+
     //删除计量单位
     @Override
     @Transactional
